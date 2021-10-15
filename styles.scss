@@ -1,0 +1,188 @@
+/* Import fonts and other styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..1,900&family=Reem+Kufi:wght@400..700&display=swap");
+@import url("reset.css");
+
+// #region Variables
+
+$clr-bg: #082b36;
+
+$clr-primary-400: #c4f9ff;
+
+$txt-clr-heading: #fff;
+$txt-clr-content: #ddd;
+$txt-clr-caption: #aaa;
+
+$font-heading: "Public Sans", "Reem Kufi", "Inter", Arial, sans-serif;
+$font-subheading: "Reem Kufi", "Public Sans", "Inter", Arial, sans-serif;
+$font-content: "Inter", "Reem Kufi", Arial, sans-serif;
+
+$content-width: clamp(300px, 65%, 1000px);
+
+// #endregion
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: $clr-bg;
+}
+
+// #region Navigation
+nav.nav {
+  padding: 1.5rem 0;
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $clr-bg;
+  .nav-wrapper {
+    width: $content-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  a.nav__name {
+    color: $txt-clr-heading;
+    font-family: $font-heading;
+    font-size: clamp(20px, 1vw + 1rem, 50px);
+    font-weight: 700;
+  }
+
+  ul.nav__links {
+    display: flex;
+    gap: 1.5rem;
+
+    li > a {
+      color: $txt-clr-caption;
+      font-family: $font-content;
+      font-weight: 400;
+
+      &:hover {
+        color: $txt-clr-heading;
+      }
+    }
+  }
+}
+
+// #endregion
+
+// #region Header
+
+header.hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .header__content {
+    width: $content-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    span {
+      color: $txt-clr-heading;
+      margin-right: auto;
+    }
+
+    .hero__name {
+      font-family: $font-heading;
+      font-size: clamp(32px, 3vw + 1rem, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero__text {
+      font-family: $font-subheading;
+      color: $txt-clr-caption;
+    }
+
+    .hero__img {
+      min-width: 200px;
+      max-width: 45%;
+      aspect-ratio: 1/1;
+      margin-left: auto;
+    }
+  }
+}
+
+// #endregion
+
+// #region Content
+
+.section {
+  width: $content-width;
+  margin: 0 auto 3rem;
+  height: max-content;
+
+  h2 {
+    font-family: $font-heading;
+    font-size: clamp(28px, 2vw + 1rem, 2rem);
+    color: $txt-clr-heading;
+    margin-bottom: 3rem;
+  }
+
+  p {
+    font-family: $font-content;
+    color: $txt-clr-content;
+    line-height: 160%;
+  }
+
+  img {
+    min-width: 200px;
+    max-width: 45%;
+    aspect-ratio: 1;
+  }
+
+  &.section--hasImage {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    img {
+      min-width: 35%;
+    }
+  }
+}
+
+// #endregion
+
+@media (max-width: 816px) {
+  header.hero .header__content {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
+
+    span,
+    .hero__img {
+      margin: 0;
+    }
+
+    .hero__text {
+      text-align: center;
+    }
+
+    .hero__img {
+      max-width: 75%;
+    }
+  }
+
+  .section.section--hasImage {
+    display: block;
+
+    p,
+    img {
+      min-width: 75%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    img {
+      margin-top: 3rem;
+    }
+  }
+}

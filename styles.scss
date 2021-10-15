@@ -178,6 +178,13 @@ header.hero {
   border-radius: 0.4rem;
   width: calc(100% - 4rem);
   margin-bottom: 2rem;
+  cursor: pointer;
+  transition: background 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    background: darken($clr-bg, 2.5%);
+    box-shadow: 1px 1px 15px #0002;
+  }
 
   img {
     min-width: 100%;
@@ -199,6 +206,77 @@ header.hero {
 
   &:last-of-type {
     margin-bottom: 0;
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #0009;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.modal {
+  width: clamp(300px, 35%, 700px);
+  position: fixed;
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: darken($clr-bg, 2%);
+  padding: 2rem;
+  z-index: 3;
+  border-radius: 0.3rem;
+  max-height: 95%;
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: top 0.1s ease, opacity 0.1s ease;
+
+  &.show {
+    top: 50%;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-family: $font-content;
+    color: $txt-clr-content;
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    font-family: $font-subheading;
+    color: #333;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    background: $clr-primary-400;
+    display: block;
+    padding: 0.75rem 1rem;
+    width: max-content;
+    margin-top: 1rem;
   }
 }
 

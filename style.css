@@ -198,7 +198,6 @@ p {
   }
 
   .card_button {
-    /* background: rgba(255, 255, 255, 0.3); */
     background: #00587f;
     color: #ddd;
   }
@@ -208,7 +207,7 @@ p {
   }
 
   .card_button:hover {
-    background: rgba(255, 255, 255, 0.35);
+    background: #006a99;
   }
 
   .card_button.site:hover {

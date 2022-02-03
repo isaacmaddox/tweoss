@@ -13,13 +13,8 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+  transition: background 0.2s ease;
 }
-
-i {
-  transition: color 0.0s linear!important;
-}
-
 #wrapper {
   width: 65%;
   padding-top: 125px;
@@ -65,6 +60,7 @@ p {
 
 a {
   color: #00587f;
+  transition: color 0.2s ease;
 }
 
 .card-flex {
@@ -115,11 +111,13 @@ a {
   font-family: "Work Sans", serif;
   font-size: 1.75rem;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 .card_content {
   max-width: 100%;
   text-align: left;
   margin-top: 15px;
+  transition: color 0.2s ease;
 }
 
 .card_buttons {
@@ -145,7 +143,8 @@ a {
   white-space: nowrap;
   overflow: hidden;
   cursor: pointer;
-  transition: background 0.2s ease, filter 0.2s ease;
+  transition: background 0.2s ease, filter 0.2s ease, color 0.2s ease,
+    border 0.2s ease;
   text-decoration: none;
   text-align: center;
   color: #000;
@@ -267,50 +266,54 @@ button.toggleTheme:hover {
 
 /* Dark overrides */
 body.dark-override,
-  html.dark-override {
-    background: #0e1116;
-  }
+html.dark-override {
+  background: #0e1116;
+}
 
-  h1.dark-override,
-  h2.dark-override,
-  p.dark-override {
-    color: #ddd;
-  }
+h1.dark-override,
+h2.dark-override,
+p.dark-override {
+  color: #ddd;
+}
 
-  .card.dark-override {
-    background: #222;
-  }
+.card.dark-override {
+  background: #222;
+}
 
-  a.dark-override {
-    color: #a9e5ff;
-  }
+a.dark-override {
+  color: #a9e5ff;
+}
 
-  .card_title.dark-override {
-    color: #ddd;
-  }
+.card_title.dark-override {
+  color: #ddd;
+}
 
-  .card_button.dark-override {
-    background: #00587f;
-    color: #ddd;
-  }
+.card_button.dark-override {
+  background: #00587f;
+  color: #ddd;
+}
 
-  .card_button.dark-override:hover {
-    background: #006a99;
-  }
+.card_button.dark-override:hover {
+  background: #006a99;
+}
 
-  .card_button.site.dark-override:hover {
-    background: rgba(255, 255, 255, 0.05);
-  }
+.card_button.site.dark-override:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
 
-  button.toggleTheme.dark-override {
-    background: #00587f;
-    color: #fff;
-  }
+button.toggleTheme.dark-override {
+  background: #00587f;
+  color: #fff;
+}
 
-  button.toggleTheme:hover.dark-override {
-    background: #006a99;
-  }
-  .card_button.dark-override.site {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: transparent!important;
-  }
+button.toggleTheme:hover.dark-override {
+  background: #006a99;
+}
+.card_button.dark-override.site {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent !important;
+}
+
+.card_button i {
+  transition: all 0s linear !important;
+}

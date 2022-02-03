@@ -198,7 +198,8 @@ p {
   }
 
   .card_button {
-    background: rgba(255, 255, 255, 0.3);
+    /* background: rgba(255, 255, 255, 0.3); */
+    background: #00587f;
     color: #ddd;
   }
 

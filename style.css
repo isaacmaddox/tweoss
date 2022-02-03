@@ -98,8 +98,12 @@ a {
   object-fit: cover;
 }
 
-.card_wrapper {
+.card img ~ .card_wrapper {
   padding: 25px 25px 0 25px;
+}
+
+.card_wrapper {
+  padding: 25px;
 }
 
 .card_title {

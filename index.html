@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="scripts.js"></script>
+    <title>Tweoss</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Francis Chua</h1>
+        <img src="media/header.png" alt="Francis Chua" class="header_pic" />
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quidem laudantium aspernatur id et?
+            Dolorem fugiat pariatur maxime corrupti tempore cupiditate aliquam modi vero ipsa omnis commodi a,
+            laboriosam
+            non soluta odit cum. Soluta, dolores animi tenetur error repellendus atque at hic ullam molestias
+            voluptatem.
+            Omnis, sapiente nesciunt. Amet dolorem magni magnam natus facere adipisci, harum numquam, molestias ullam
+            assumenda modi distinctio unde libero cupiditate quas temporibus vero autem ad nihil iste qui a! Numquam
+            repellat fugiat odit. Accusamus quasi natus illum! Eius numquam amet nobis in. Consequatur quidem et eius
+            earum,
+            repellat, repudiandae nam sit porro hic dolore facere?</p>
+        <h2>Projects</h2>
+        <div class="card-flex">
+            <div class="col">
+                <!-- Column 1 -->
+                <div class="card">
+                    <img src="media/img-placeholder-1.jpg" alt="Image" class="card_img" />
+                    <div class="card_wrapper">
+                        <div class="card_title">Project Name</div>
+                        <p class="card_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            iusto fugit molestiae. Modi, doloribus quae voluptatem enim, magni nemo excepturi, porro
+                            unde
+                            beatae placeat velit.</p>
+                        <div class="card_buttons">
+                            <a class="card_button repo" href="#" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> View Repo</a>
+                            <a class="card_button site" href="#" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Website</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- spacing -->
+                <div class="card">
+                    <div class="card_wrapper">
+                        <div class="card_title">Project Name</div>
+                        <p class="card_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            iusto fugit molestiae. Modi, doloribus quae voluptatem enim, magni nemo excepturi, porro
+                            unde
+                            beatae placeat velit.</p>
+                        <div class="card_buttons">
+                            <a class="card_button repo" href="#" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> View Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- Column 2 -->
+                <div class="card">
+                    <div class="card_wrapper">
+                        <div class="card_title">Project Name</div>
+                        <p class="card_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            iusto fugit molestiae. Modi, doloribus quae voluptatem enim, magni nemo excepturi, porro
+                            unde
+                            beatae placeat velit.</p>
+                        <div class="card_buttons">
+                            <a class="card_button repo" href="#" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> View Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- spacing -->
+                <div class="card">
+                    <img src="media/img-placeholder-1.jpg" alt="Image" class="card_img" />
+                    <div class="card_wrapper">
+                        <div class="card_title">Project Name</div>
+                        <p class="card_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
+                            iusto fugit molestiae. Modi, doloribus quae voluptatem enim, magni nemo excepturi, porro
+                            unde
+                            beatae placeat velit.</p>
+                        <div class="card_buttons">
+                            <a class="card_button repo" href="#" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> View Repo</a>
+                            <a class="card_button site" href="#" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".card_buttons").removeClass('wrap');
+            $(".card_button").each(function () {
+                $(this).html("<span>" + $(this).html() + "</span>");
+                if ($(this).children("span").width() > $(this).width()) {
+                    $(".card_buttons").addClass('wrap');
+                }
+            });
+        });
+        $(window).resize(function () {
+            $(".card_buttons").removeClass('wrap');
+            $(".card_button").each(function () {
+                $(this).html("<span>" + $(this).html() + "</span>");
+                if ($(this).children("span").width() > $(this).width()) {
+                    $(".card_buttons").addClass('wrap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

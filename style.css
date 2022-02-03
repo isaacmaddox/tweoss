@@ -176,3 +176,41 @@ p {
     text-align: left;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body,
+  html {
+    background: #0e1116;
+  }
+
+  h1,
+  h2,
+  p {
+    color: #ddd;
+  }
+
+  .card {
+    background: #222;
+  }
+
+  .card_title {
+    color: #ddd;
+  }
+
+  .card_button {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ddd;
+  }
+
+  .card_button.site {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .card_button:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .card_button.site:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

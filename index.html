@@ -84,7 +84,7 @@
                     <div class="card_wrapper">
                         <div class="card_title">Project Name</div>
                         <p class="card_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit
-                            iusto fugit molestiae. Modi, doloribus quae voluptatem enim, magni nemo excepturi, porro
+                            iusto fugit molestiae. <a href="#">Modi</a>, doloribus quae voluptatem enim, magni nemo excepturi, porro
                             unde
                             beatae placeat velit.</p>
                         <div class="card_buttons">
@@ -98,7 +98,11 @@
             </div>
         </div>
     </div>
+    <button class="toggleTheme" onclick="changeTheme()">
+        <i class="fas fa-adjust"></i>
+    </button>
     <script>
+        var theme = "light";
         $(document).ready(function () {
             $(".card_buttons").removeClass('wrap');
             $(".card_button").each(function () {
@@ -107,6 +111,11 @@
                     $(".card_buttons").addClass('wrap');
                 }
             });
+
+            // Set theme in order to make toggle theme button work
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                theme = "dark";
+            }
         });
         $(window).resize(function () {
             $(".card_buttons").removeClass('wrap');
@@ -117,6 +126,19 @@
                 }
             });
         });
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            theme = event.matches ? "dark" : "light";
+            changeTheme();
+        });
+        function changeTheme() {
+            if (theme == "dark") {
+                $("*, *  *").removeClass('dark-override').addClass('light-override');
+                theme = "light";
+            } else {
+                $("*, *  *").removeClass('light-override').removeClass('dark-override');
+                theme = "dark";
+            }
+        }
     </script>
 </body>
 

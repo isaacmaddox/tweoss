@@ -58,6 +58,10 @@ p {
   font-size: 1rem;
 }
 
+a {
+  color: #00587f;
+}
+
 .card-flex {
   /* background: blue; */
   display: flex;
@@ -154,6 +158,25 @@ p {
   margin-right: 0.5rem;
 }
 
+button.toggleTheme {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  border: 0;
+  background: #a9e5ff;
+  color: #000;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease, filter 0.2s ease;
+}
+
+button.toggleTheme:hover {
+  filter: brightness(95%);
+}
+
 @media (max-width: 1050px) {
   #wrapper {
     width: calc(100% - 70px);
@@ -179,39 +202,106 @@ p {
 }
 
 @media (prefers-color-scheme: dark) {
-  body,
-  html {
+  body:not(.light-override),
+  html:not(.light-override) {
     background: #0e1116;
   }
 
-  h1,
-  h2,
-  p {
+  h1:not(.light-override),
+  h2:not(.light-override),
+  p:not(.light-override) {
     color: #ddd;
   }
 
-  .card {
+  .card:not(.light-override) {
     background: #222;
   }
 
-  .card_title {
+  a:not(.light-override) {
+    color: #a9e5ff;
+  }
+
+  .card_title:not(.light-override) {
     color: #ddd;
   }
 
-  .card_button {
+  .card_button:not(.light-override):not(.site) {
     background: #00587f;
     color: #ddd;
   }
 
-  .card_button.site {
+  .card_button.site:not(.light-override) {
+    color: #ddd;
+  }
+
+  .card_button.site:not(.light-override) {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .card_button:hover {
+  .card_button:not(.light-override):hover {
     background: #006a99;
   }
 
-  .card_button.site:hover {
+  .card_button.site:not(.light-override):hover {
     background: rgba(255, 255, 255, 0.05);
   }
+
+  button.toggleTheme:not(.light-override) {
+    background: #00587f;
+    color: #fff;
+  }
+
+  button.toggleTheme:not(.light-override):hover {
+    background: #006a99;
+  }
 }
+
+/* Dark overrides */
+body.dark-override,
+  html.dark-override {
+    background: #0e1116;
+  }
+
+  h1.dark-override,
+  h2.dark-override,
+  p.dark-override {
+    color: #ddd;
+  }
+
+  .card.dark-override {
+    background: #222;
+  }
+
+  a.dark-override {
+    color: #a9e5ff;
+  }
+
+  .card_title.dark-override {
+    color: #ddd;
+  }
+
+  .card_button.dark-override {
+    background: #00587f;
+    color: #ddd;
+  }
+
+  .card_button.dark-override:hover {
+    background: #006a99;
+  }
+
+  .card_button.site.dark-override:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  button.toggleTheme.dark-override {
+    background: #00587f;
+    color: #fff;
+  }
+
+  button.toggleTheme:hover.dark-override {
+    background: #006a99;
+  }
+  .card_button.dark-override.site {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent!important;
+  }

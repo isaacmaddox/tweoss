@@ -97,6 +97,7 @@ a {
   width: 100%;
   max-height: 35vh;
   object-fit: cover;
+  transition: filter 0.2s ease;
 }
 
 .card img ~ .card_wrapper {
@@ -229,6 +230,10 @@ button.toggleTheme:hover {
     color: #a9e5ff;
   }
 
+  .card img:not(.light-override) {
+    filter: brightness(70%);
+  }
+
   .card_title:not(.light-override) {
     color: #ddd;
   }
@@ -282,6 +287,10 @@ p.dark-override {
 
 a.dark-override {
   color: #a9e5ff;
+}
+
+.card img.dark-override {
+  filter: brightness(70%);
 }
 
 .card_title.dark-override {
